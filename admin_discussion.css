@@ -1,0 +1,416 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Candara, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #2D4A91;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo img {
+  height: 48px;
+  max-height: 48px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.logout a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: block; /* ✅ force visible */
+}
+
+/* Sidebar */
+.sidebar {
+  font-size: 23px;
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  position: fixed;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  opacity: 70%;
+}
+
+.sidebar.active {
+  transform: translateX(-100%);
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar p {
+  padding-left: 25%;
+  padding-bottom: 10%;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+  color: #3b75d2;
+}
+
+.main-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    width:100%;
+    margin:0 auto;            /* keep centring by default   */
+    margin-top:100px;
+    transition: margin-left 0.3s ease, margin-top 0.3s ease;  /* ✅ smooth slide      */
+}
+
+/* put this near your other .main-content rules */
+.main-content.pushed {
+    margin-left: 250px;          /* ⬅️ same as sidebar width */
+    width: calc(100% - 250px);   /* ⬅️ prevent horizontal scroll */
+}
+
+/* Discussion Card (Comments) */
+.discussion-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%; /* Ensures it takes full width inside the container */
+  max-width: 800px; /* Set a maximum width for the posts */
+  margin-bottom: 20px; /* Add margin to create space between posts */
+  margin-top: 20px;
+}
+
+
+/* Ensuring comments and replies also have a consistent width */
+.comment-card, .reply-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Keeping headers clean for readability */
+.comment-header, .reply-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;  
+  white-space: nowrap;
+}
+
+
+.commenter-info, .replier-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-text, .reply-text {
+  margin: 10px 0;
+}
+
+.comment-attachment, .reply-attachment {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.attachment-img {
+  max-width: 100%;
+  max-height: 300px;
+}
+
+.attachment-link {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.reply-section {
+  margin-top: 20px;
+}
+
+/* Reply Form and Comment Form */
+.reply-form, .comment-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reply-form textarea, .comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.reply-form button, .comment-form button {
+  background-color: #2D4A91;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reply-form button:hover, .comment-form button:hover {
+  background-color: #1f3b71;
+}
+
+/* Scrollable Comment Area */
+.comment-section {
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+
+.comment {
+  background-color: #aec4d5;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comment-header img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-header .username {
+  font-weight: bold;
+}
+
+.comment-header .timestamp {
+  color: #888;
+  font-size: 12px;
+}
+
+.comment-content {
+  font-size: 14px;
+  color: #333;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  color: #888;
+}
+
+.comment-actions .action {
+  cursor: pointer;
+}
+
+.comment-actions .action:hover {
+  text-decoration: underline;
+}
+
+/* Reply Section */
+.reply-section {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+.reply {
+  background-color: #e1e1f7;
+  padding: 10px;
+  border-radius: 8px;
+  width: 70%;
+  max-width: 600px;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+}
+
+.reply-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.reply-header img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.reply-header .username {
+  font-weight: bold;
+}
+
+.reply-header .timestamp {
+  color: #888;
+  font-size: 12px;
+}
+
+.reply-content {
+  font-size: 14px;
+  color: #333;
+}
+
+.reply-actions {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  color: #888;
+}
+
+.reply-actions .action {
+  cursor: pointer;
+}
+
+.reply-actions .action:hover {
+  text-decoration: underline;
+}
+
+/* Adjust Delete Button */
+.delete-form {
+  display: inline;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* ----------------------------------------------------------
+   Footer
+---------------------------------------------------------- */
+/* Footer */
+.footer {
+  background: #2D4A91;
+  color: #ffffff;
+  padding: 40px 20px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;  /* Ensure it spans full width */
+}
+
+.footer-about,
+.footer-links,
+.footer-social {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.footer-bottom {
+  background: #1f3b71;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}

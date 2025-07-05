@@ -1,0 +1,156 @@
+/* ----------------------------------------------------------
+   Global styles
+---------------------------------------------------------- */
+body {
+    font-family: Candara;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+}
+
+/* ----------------------------------------------------------
+   Header
+---------------------------------------------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2D4A91;
+    padding: 10px 20px;   /* Reduced padding to match the index page */
+    min-height: 60px;      /* Reduced height for a compact header */
+}
+
+/* ----- navigation links (left) ----- */
+.header-left {
+    display: flex;
+    gap: 20px;           /* Reduced gap between links */
+}
+
+.header-left .nav-link {
+    color: #ffffff;
+    font-size: 16px;      /* Smaller font size to match the index page */
+    text-decoration: none;
+}
+
+/* ----- right side: Login | Signup + logo  ----- */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-right .nav-link {
+    color: #ffffff;
+    font-size: 16px;      /* Smaller font size */
+    text-decoration: none;
+}
+
+/* logo sizing */
+.logo-container .logo {
+    height: 40px; 
+    max-height: 48px;        /* Reduced logo size for the About Us page */
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+.logo-container .logo {
+    height: 48px;                   /* change this to grow / shrink */
+    width: auto;
+}
+/* About Section Styles */
+.about-section {
+    padding: 0px 0px;
+    text-align: center;
+    background: url('image/aboutusbg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(28, 21, 78);
+}
+
+.about-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.content-box {
+    background-color: rgba(255, 255, 255, 0.7); /* Slight transparency */
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    width: 60%;
+    text-align: justify;
+}
+
+.content-box p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* ----------------------------------------------------------
+   Footer
+---------------------------------------------------------- */
+.footer {
+  background: #2D4A91;
+  color: #ffffff;
+  padding: 40px 20px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-about,
+.footer-links,
+.footer-social {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-social h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer-about p,
+.footer-links ul,
+.footer-social ul {
+  font-size: 16px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer a:link,
+.footer a:visited,
+.footer a:hover,
+.footer a:active {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  background: #1f3b71;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}

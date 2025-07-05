@@ -1,0 +1,373 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Candara;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the body takes at least the full height of the viewport */
+}
+
+/* Navbar */
+.navbar {
+  background-color: #2D4A91;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo img {
+  height: 48px; /* preferred height */
+  max-height: 48px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.logout a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: block; /* ✅ force visible */
+}
+
+.sidebar {
+  font-size: 23px;
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  position: fixed;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  transform: translateX(0); 
+  transition: transform 0.3s ease;
+}
+
+
+.sidebar.active {
+  transform: translateX(-100%); /* Show when active */
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar p {
+  padding-left: 25%;
+  padding-bottom: 10%;
+  padding-top: 10%;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+  color: #3b75d2;
+}
+
+/* Add Flexbox to button container for proper vertical alignment */
+.button-container {
+    display: flex;
+    flex-direction: column;  /* Stack buttons vertically */
+    align-items: center;     /* Center buttons horizontally */
+    gap: 15px;               /* Add space between the buttons */
+    margin-top: 20px;        /* Optional: Add some space above the buttons */
+    width: 100%;             /* Ensure the container takes full width */
+}
+
+
+.upload-btn {
+   background-color: #4085ec ;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Make the button fill the container */
+    max-width: 200px; /* Set a max width to avoid over stretching */
+    margin: 0 auto; /* Center the button */
+}
+
+.upload-btn:hover {
+    background-color: #ddc9e6;
+}
+
+
+/* Styling for the GO button */
+.go-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Make the button fill the container */
+    max-width: 200px; /* Set a max width to avoid over stretching */
+    margin: 0 auto; /* Center the button */
+}
+
+.go-btn:hover {
+    background-color: #218838;
+}
+
+
+/* Content area */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.content h2 {
+    font-size: 40px;
+}
+
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 45px 10px 15px; /* padding-right for the button */
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.search-btn img {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+  opacity: 50%;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.main-container {
+    padding-top: 80px;
+    padding-left: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: row; /* Default, but just in case */
+    gap: 20px; /* optional spacing between filter and content */
+}
+/* Material list */
+.material-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.material-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.filter h3{
+  font-size: 25px;
+  margin-top: 10px;
+  margin-top: 10px;
+}
+
+.filter label{
+font-size: 20px;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.download-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn {
+    background-color: rgb(238, 46, 46);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #f79494;
+}
+
+.edit-btn {
+    background-color: #ffdb65;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background-color: #ffdb65;
+}
+
+/* ----------------------------------------------------------
+   Footer
+---------------------------------------------------------- */
+.footer {
+    background: #2D4A91;
+    color: #ffffff;
+    padding: 40px 20px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-about,
+.footer-links,
+.footer-social {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-social h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer-about p,
+.footer-links ul,
+.footer-social ul {
+    font-size: 16px;
+}
+
+/* remove bullets & padding */
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* link colours: white always */
+.footer a:link,
+.footer a:visited,
+.footer a:hover,
+.footer a:active {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* bottom bar */
+.footer-bottom {
+    background: #1f3b71;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-about,
+.footer-links,
+.footer-social {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-social h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer-about p,
+.footer-links ul,
+.footer-social ul {
+    font-size: 16px;
+}
+
+/* remove bullets & pa
