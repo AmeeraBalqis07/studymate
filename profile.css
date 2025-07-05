@@ -1,0 +1,278 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Candara;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #2D4A91;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between logo and logout */
+}
+
+.logo img {
+  height: 48px;          /* preferred height */
+  max-height: 48px;
+  width: auto;
+  display: block;  
+  object-fit: contain;
+}
+
+.logout a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: block; /* ✅ force visible */
+}
+
+/* Sidebar */
+.sidebar {
+  font-size: 23px;
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  position: fixed;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  transform: translateX(0%); /* Hide by default */
+  transition: transform 0.3s ease;
+}
+
+.sidebar.active {
+  transform: translateX(-100%); /* Show when active */
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar p {
+  padding-left: 25%;
+  padding-bottom: 10%;
+  padding-top: 10%;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+.sidebar ul li a{
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+  color: #3b75d2;
+}
+
+/* Main Profile Layout */
+.profile-page {
+    max-width: 800px;
+    margin: 40px auto;
+    margin-top: 150px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.profile-page h1 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #2D4A91;
+    text-align: center;
+}
+
+/* Profile Picture */
+.profile-picture {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.profile-picture input {
+    display: block;
+    margin: 10px auto;
+}
+
+/* Form */
+.profile-form .form-group {
+    margin-bottom: 20px;
+}
+.profile-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.profile-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Reset Password Link */
+.reset-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #2D4A91;
+    text-decoration: none;
+}
+.reset-link:hover {
+    text-decoration: underline;
+}
+
+/* Save Button */
+.btn-save {
+    background: #2D4A91;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-save:hover {
+    background: #1f3b71;
+}
+
+/* ----------------------------------------------------------
+   Footer
+---------------------------------------------------------- */
+/* Footer */
+.footer {
+  background: #2D4A91;
+  color: #ffffff;
+  padding: 40px 20px;
+  width: 100%;
+  z-index: 9999; /* Footer has higher z-index to be above sidebar */
+  position: relative;
+  bottom: 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-about,
+.footer-links,
+.footer-social {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-social h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer-about p,
+.footer-links ul,
+.footer-social ul {
+  font-size: 16px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer a:link,
+.footer a:visited,
+.footer a:hover,
+.footer a:active {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  background: #1f3b71;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar .logo {
+    font-size: 18px;
+  }
+
+  .navbar .logout {
+    font-size: 14px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-about,
+  .footer-links,
+  .footer-social {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
